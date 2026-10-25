@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1a1038" />
+    <title>Test · Tu propio Jarvis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="scene">
+      <article class="card">
+        <p class="eyebrow">
+          <span class="pulse" aria-hidden="true"></span>
+          En vivo · Lima
+        </p>
+        <h1>¡Hola! Esto es un test 👋</h1>
+        <p class="subtitle">Saludos desde Tu propio Jarvis</p>
+        <div class="clock-block">
+          <p class="clock-label" id="clock-label">Hora en Lima</p>
+          <time id="clock" class="clock" datetime="" aria-labelledby="clock-label">
+            <span id="hours">00</span><span class="sep" aria-hidden="true">:</span
+            ><span id="minutes">00</span><span class="sep" aria-hidden="true">:</span
+            ><span id="seconds">00</span>
+          </time>
+          <p id="date" class="date">Cargando fecha…</p>
+        </div>
+      </article>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

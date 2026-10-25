@@ -1,0 +1,151 @@
+:root {
+  --ink: #f8f7ff;
+  --muted: rgba(248, 247, 255, 0.74);
+  --accent: #7ef0d6;
+  --card: rgba(255, 255, 255, 0.12);
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: "Outfit", "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(900px 480px at 8% -8%, rgba(126, 240, 214, 0.28), transparent 58%),
+    radial-gradient(720px 420px at 110% 8%, rgba(244, 114, 182, 0.32), transparent 52%),
+    linear-gradient(165deg, #140c2e 0%, #3a1d72 46%, #0f766e 100%);
+}
+
+.scene {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 28px 16px;
+}
+
+.card {
+  width: min(100%, 420px);
+  padding: 32px 22px 28px;
+  text-align: center;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), var(--card));
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow: 0 28px 70px rgba(10, 6, 28, 0.42);
+  backdrop-filter: blur(18px);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(8, 6, 24, 0.28);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(126, 240, 214, 0.7);
+  animation: pulse 1.8s ease-out infinite;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 7vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.clock-block {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.clock-label {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.clock {
+  display: block;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: clamp(3.1rem, 15vw, 4.4rem);
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.sep {
+  opacity: 0.55;
+}
+
+#seconds {
+  color: var(--accent);
+}
+
+.date {
+  display: inline-block;
+  margin: 18px 0 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(8, 6, 24, 0.32);
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+@media (min-width: 720px) {
+  .card {
+    padding: 40px 36px 34px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    animation: none;
+  }
+}
+
+@keyframes pulse {
+  70% {
+    box-shadow: 0 0 0 8px rgba(126, 240, 214, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(126, 240, 214, 0);
+  }
+}
